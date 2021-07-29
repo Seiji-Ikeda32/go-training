@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-//定数
+//定数 頭文字を大文字にすることで他のパッケージからも呼び出せる。
 const Name = "Seiji Ikeda"
 
 func main() {
