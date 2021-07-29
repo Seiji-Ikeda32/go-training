@@ -3,10 +3,19 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func anything(a interface{}) {
 	fmt.Println(a)
+}
+
+//並行処理（サブ関数）
+func sub() {
+	for {
+		fmt.Println("sub loop")
+		time.Sleep(100 * time.Microsecond)
+	}
 }
 
 func main() {
@@ -39,4 +48,11 @@ func main() {
 
 	anything(1)
 
+	//並行処理（サブ関数）
+	go sub()
+	//並行処理（メイン関数）
+	for {
+		fmt.Println("main loop")
+		time.Sleep(200 * time.Microsecond)
+	}
 }
